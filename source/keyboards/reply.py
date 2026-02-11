@@ -20,7 +20,7 @@ def create_start_keyboard() -> list[list[KeyboardButton]]:
             KeyboardButton(text="Удалить 🗑")
         ],
         [
-            KeyboardButton(text="Поделиться 📩")️,
+            KeyboardButton(text="Поделиться 📩"),
             KeyboardButton(text="Желания Человека 🤔")
         ]
     ]
