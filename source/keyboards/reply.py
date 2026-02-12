@@ -1,7 +1,7 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
-def create_start_keyboard() -> list[list[KeyboardButton]]:
-    """ Создание клавиатуры с главным функционалом бота:
+def create_start_keyboard():
+    """## Создание клавиатуры с главным функционалом бота:
     - Добавление подарков в свой список желаний;
     - Изменение данных своих подарков;
     - Удаление позиций из списка желаний;
@@ -25,5 +25,7 @@ def create_start_keyboard() -> list[list[KeyboardButton]]:
         ]
     ]
 
-    return keyboard
-
+    return ReplyKeyboardMarkup(
+        keyboard=keyboard,
+        resize_keyboard=True
+    )
