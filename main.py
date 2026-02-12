@@ -7,20 +7,20 @@ from source.logs.logger import logger
 from source.keyboards.reply import create_start_keyboard
 
 
-bot = Bot(token="8369386871:AAFRMMoiWKBWdf48WdiVqFg4hGOvPIGRRNY")
+bot = Bot(token=TOKEN_BOT)
 dp = Dispatcher()
 
 
 @dp.message(Command("start"))
 async def start_command(message: Message):
     await message.answer("""✨ Добро пожаловать в бота «Что подарить?»! ✨
-    
+
 Тот самый помощник, который навсегда решит проблему с подарками.
 
 Создайте свой вишлист, добавьте в него ссылки на товары из любых магазинов и легко делитесь списком с друзьями и семьей.
 
 Давайте создадим ваш первый список желаний! Просто напишите, что бы вы хотели получить в подарок?""",
-    reply_markup=create_start_keyboard)
+    reply_markup=create_start_keyboard())
     logger.info(f"Start message")
 
 
