@@ -1,7 +1,7 @@
 from aiogram import F, Router
 from aiogram.types import Message
 
-from source.logs.logger import logger
+from source.log.logger import logger
 
 router_buttons = Router()
 
