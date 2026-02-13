@@ -3,5 +3,5 @@
 .idea/
 *.cpython-314.pyc
 *.pyc
-__pycache__
+__pycache__/
 .ruff_cache
