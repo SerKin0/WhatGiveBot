@@ -1,10 +1,11 @@
+from datetime import datetime
 from enum import StrEnum
 
-from sqlalchemy import String, Boolean, func, BigInteger, DateTime
-from sqlalchemy.orm import Mapped, mapped_column, declarative_base
-from datetime import datetime
+from sqlalchemy import BigInteger, Boolean, DateTime, String, func
+from sqlalchemy.orm import Mapped, declarative_base, mapped_column
 
 Base = declarative_base()
+
 
 class UserStatus(StrEnum):
     USER = "user"
@@ -26,16 +27,8 @@ class Users(Base):
     language_code: Mapped[str | None] = mapped_column(String(10), nullable=True)
     registered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     last_activity: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True),
-        server_default=func.now(),
-        onupdate=func.now()
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
     )
     is_banned: Mapped[bool] = mapped_column(Boolean, default=False)
-    status: Mapped[UserStatus] = mapped_column(
-        String(20),
-        server_default=UserStatus.USER.value(),
-        nullable=False
-    )
+    status: Mapped[UserStatus] = mapped_column(String(20), server_default=UserStatus.USER.value(), nullable=False)
     automat_registration: Mapped[bool] = mapped_column(Boolean, default=False)
-
-

@@ -1,4 +1,7 @@
 .venv/
 .env.development
 .idea/
-.pyc
+*.cpython-314.pyc
+*.pyc
+__pycache__/
+.ruff_cache
