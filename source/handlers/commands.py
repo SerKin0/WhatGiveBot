@@ -3,7 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 
 from source.keyboards.reply import create_start_keyboard
-from source.logs.logger import logger
+from source.log.logger import logger
 
 router_commands = Router()
 
